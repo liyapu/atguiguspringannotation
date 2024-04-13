@@ -18,18 +18,15 @@ public class MyBeanFactory implements BeanFactoryAware,BeanNameAware,Environment
     private BeanFactory beanFactory;
     private Environment environment;
 
-    @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
         this.beanFactory = beanFactory;
         System.out.println(beanFactory);
     }
 
-    @Override
     public void setBeanName(String name) {
         System.out.println("------------------" + name);
     }
 
-    @Override
     public void setEnvironment(Environment environment) {
         this.environment = environment;
         System.out.println(environment);
