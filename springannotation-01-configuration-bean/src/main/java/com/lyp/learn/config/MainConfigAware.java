@@ -1,8 +1,5 @@
 package com.lyp.learn.config;
 
-import com.lyp.learn.bean.Car;
-import com.lyp.learn.bean.Color;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
