@@ -19,6 +19,20 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * 初始化阶段完成
  * 关闭容器，执行DisposableBean接口的destroy
  * 执行bean的destory-method属性指定的初始化方法
+ *
+ *
+ *
+ * ==================================
+ * -----init-------
+ * @PostConstruct ---> 被注解标注的方法
+ * InitalizingBean ---> afterPropertiesSet
+ * init-method ---> 通过配置指定的方法
+ *
+ * -------关闭容器close()时调用
+ * @PreDestroy --->被注解标注的方法
+ * DisposableBean ---> destroy
+ * destroy-method --->通过配置指定的方法
+ *
  */
 public class IOCLifeCycleTest {
 
@@ -30,6 +44,7 @@ public class IOCLifeCycleTest {
        Car car = (Car) ac.getBean("car");
        System.out.println(car);
        //强制转换一下类型，才会有 close 方法
+       //容器关闭的时候，才会调用 destroy方法，进行bean的销毁
        ( (AnnotationConfigApplicationContext)ac).close();
    }
 }

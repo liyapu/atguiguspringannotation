@@ -43,6 +43,7 @@ package com.lyp.learn.threadsafe;
  * Spring如何处理线程并发问题？
  * 1.设置对象为原型 prototype
  * 2.将成员变量放到ThreadLocal中
+ * 3.使用同步锁 synchronized,会影响服务的吞吐量，把并行变成了串行
  */
 public class FishService {
 
